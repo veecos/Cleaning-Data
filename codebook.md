@@ -1,4 +1,4 @@
-| **Position** | **Variable Name** | **Type of Variable** | **Range of Values**|  |** Variable Definition** |
+| **Position** | **Variable Name** | **Type of Variable** | **Range of Values**|  | **Variable Definition** |
 | --- | --- | --- | --- | --- | --- |
 |  |  |  | **Minimum** | **Maximum** |  |
 | 1 | Activity | Factor | NA | NA | Factor is of 6 types of Levels given below, |
