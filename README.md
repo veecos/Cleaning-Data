@@ -1,5 +1,4 @@
 # README
-
 =================
 
 Prepared by Vignesh Mani M
@@ -44,17 +43,19 @@ The project asks us to select features/columns which are of mean/standard deviat
 
 For this the grep function has been used with the ignore.case set to TRUE to ensure it matches regardless of case. This is run on the column names used in the last step( second column of feat variable ). The column numbers are obtained in a second variable feat2. Only these columns are selected along with 562 and 563 which are the added columns containing activity and subject details. This is done via subsetting and the result is stored in the variable a2. On manual inspection it seemed to have selected columns which contained an angle between two vectors. These have been removed too ( columns 80 to 86 ). The final list of column names are printed.
 
-# Section 4: Name Cleaning
+# Section 4: Renaming Activities and Name Cleaning
+
+The activities which are present as numbers are converted to names via factor relevelling. The column is first converted to a factor data type and then the new factor names are obtained from the second column of act_lab, which contains the actitiy labels. This is then relevelled ( rename numbers to activities ) via the levels() function.
 
 The names of the columns have been cleaned and modified to help them describe the variables better. They have all been made to lower case by using the tolower() function. "-" has been removed.
 
 Also the character t and f have been expanded to time and FFT wherever they appear in the beginning of the name as they represent the signal in time and Frequency domain ( I am a signals major and thought this made interpretation easier because they are both different domains though one is just a transform of another)
 
-I have also removed brackets "()" wherever they appeared in the names. The entire step is carried out with intermediate variable (var.names) and then this is applied to the colnames() function. The final names are printed again.
+I have also removed brackets "()" wherever they appeared in the names. The entire step is carried out with intermediate variable (var.names) and then this is applied to the colnames() function. The final names are printed again for viewing/debugging.
 
 # Section 5: Summarizing
 
-Here the mean / average is calculated for all possible combinations of activity and subject. This is done by using the aggregate command and the output is stored in the variable agg. As the aggregate command would duplicate activity and subject if the entire dataset is given and also throw warnings , the columns with activity and subject have been excluded.
+Here the mean / average is calculated for all possible combinations of activity and subject. This is done by using the aggregate command ( the argument of FUN = mean ensures that the mean is calculated ) and the output is stored in the variable agg. As the aggregate command would duplicate activity and subject if the entire dataset is given and also throw warnings , the columns with activity and subject have been excluded.
 
 The columns are again created by the agg() function. This is checked by the dim() function. The column names of activity and subject are again entered as the names are different in the final output. This is for interpretation purposes only. Head() function helps us to view the final dataset.
 
